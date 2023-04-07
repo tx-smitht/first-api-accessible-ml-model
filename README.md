@@ -1,1 +1,4 @@
 # first-api-accessible-ml-model
+This code is my first attempt at making a machine learning model accesible through an API. I followed this tutorial to deploy the API https://dev.to/nick_langat/how-to-deploy-a-fastapi-app-to-aws-ec2-server-46d4 
+I Check out the App.py file to see how the actual model (the model.pkl) is opened, read, and used by the api. 
+By the end, you should be able to use postman and itll work!
