@@ -14,3 +14,16 @@ How I would go about replicating what I did:
 Hopefully that helps and isn't too confusing! Good luck!
 
 ![Screenshot ](https://user-images.githubusercontent.com/112910116/230518135-dc1cd4cb-67e2-4416-9e93-143bb2e24118.jpg)
+
+
+Checklist:
+- When doing the tutorial, make sure you read everything, not just the screenshots. It is pretty unclear sometimes. When you get started with an EC2, you'll have to install virtualenv onto it. (sudo pip3 install virtualenv or something, look it up). Then create an env and use it to install the dependancies (like the tutorial says)
+
+- Every time you stop or start your ec2 instance, make sure that the ip in sudo nano /etc/nginx/sites-enabled/api is correct. 
+
+- Look into the files that you create using nano. They have paths in them that need to be right or else it wont work. For example, if you have "venv" instead of "env", your paths will be off and not work. Check them to make sure they are right.
+
+- Then make sure that you do sudo service gunicorn start, sudo systemctl start gunicorn.socket, sudo systemctl enable gunicorn.socket, sudo systemctl daemon-reload, sudo systemctl restart gunicorn , sudo systemctl restart nginx
+
+- sudo systemctl status gunicorn.service can be used to see if gunicorn is running
+- ps aux | grep gunicorn needs to return 4 or 5 lines with gunicorn workers for it to be working. Otherwise, if it only returns one line, you have something wrong.
